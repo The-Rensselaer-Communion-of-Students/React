@@ -1,0 +1,25 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Rensselaer-Communion-of-Students/React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Rensselaer-Communion-of-Students/React/issues"
+  },
+  "homepage": "https://github.com/The-Rensselaer-Communion-of-Students/React#readme",
+  "dependencies": {
+    "firebase": "^9.6.10",
+    "firebase-tools": "^10.5.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.2.2"
+  }
+}
