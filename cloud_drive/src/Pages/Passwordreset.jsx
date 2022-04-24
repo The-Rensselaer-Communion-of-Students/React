@@ -6,20 +6,23 @@ import { useNavigate } from "react-router-dom";
 import Navbarf from '../Components/Navbarf';
 
 
-export const Resetter = () => {
-    const { user, logoutUser } = useUserContext();
-    const navigate = useNavigate();
-    console.log(user);
+export default function ResetPage() {
+    const resetEMAIL = useRef()
+    const resetSubmit = (e) => {
+        e.preventDefault()
+        if (resetEMAIL) {
+            console.log(resetEMAIL.current.value)
+        }
+    }
 
     return (
         <>
             <Navbarf></Navbarf>
-            <Form>
+            <Form onSubmit={resetSubmit}>
                 <Form.Label>Email</Form.Label>
-                <Form.Control type='email'></Form.Control>
+                <Form.Control type='email' ref={resetEMAIL} required></Form.Control>      
+                <Button type="submit">Reset</Button>
             </Form>
         </>
     )
 }
-
-export default Resetter;
