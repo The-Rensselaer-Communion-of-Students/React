@@ -9,7 +9,7 @@ export default function Navbarf() {
     <Navbar bg="light">
       <Navbar.Brand href="/">
         <img
-src="logo.jpg"
+          src="logo.jpg"
           alt="Sample Brand Logo"
           width="35"
           className="align-top d-inline-block"
@@ -18,18 +18,21 @@ src="logo.jpg"
       </Navbar.Brand>
       <Nav className="justify-content-end" style={{ width: "100%" }}>
     <Nav.Item>
-      
       <Nav.Link href="/UserInfo">Account</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link href="/Files">Files</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link href="/Upload">Uploads</Nav.Link>
+      <Nav.Link href="/Upload">Upload</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/Editor">Editor</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link href="/help">Help</Nav.Link>
     </Nav.Item>
+    
   </Nav>
     </Navbar>
   </div>
