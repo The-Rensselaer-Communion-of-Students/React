@@ -31,4 +31,10 @@ h1{
     font-weight: bold;
     max-width: 400px;
     margin-bottom: 18px;
-  }
+}
+
+.rounded-pill:hover {
+    background-color: cadetblue;
+    transform: scale(1.1);
+    transition: 0.4s;
+}
