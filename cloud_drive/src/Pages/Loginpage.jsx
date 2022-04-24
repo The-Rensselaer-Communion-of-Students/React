@@ -30,8 +30,8 @@ export default function Loginpage() {
             <Form.Control type="password" placeholder="Password" ref={psdRef}/>
             <hr className="solid"/>
             <div className="d-grid gap-2">
-            <Button variant="primary" type="submit" size="lg">Login</Button>
-            <Button variant="primary" type="submit" size="lg">Sign In With Google</Button>
+            <Button variant="primary" type="submit" size="lg" className='rounded-pill'>Login</Button>
+            <Button variant="primary" type="submit" size="lg" className='rounded-pill'>Sign In With Google</Button>
             </div>
         </Form>
         </div>
