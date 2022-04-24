@@ -10,7 +10,7 @@
     overflow: hidden;
     flex-Direction: column;
 }
-#w2{
+.loginbox {
     height: 70vh;
     width: 50vh;
     border-radius: 25px;

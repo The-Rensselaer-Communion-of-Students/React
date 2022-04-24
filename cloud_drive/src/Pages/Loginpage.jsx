@@ -21,7 +21,7 @@ export default function Loginpage() {
         };
   return (
     <div id="w">
-        <div id="w2" className="shadow-lg p-4">
+        <div id="w2" className="shadow-lg loginbox p-4">
             <h1 className='pt-3 pb-4'>Login</h1>
             {error && <p className="error">{error}</p>}
           <Form id="login" onSubmit={onSubmit}>

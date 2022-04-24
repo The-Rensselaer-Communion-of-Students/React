@@ -23,7 +23,7 @@ export default function Registerpage() {
     }
   return (
     <div id="w">
-    <div id="w2">
+    <div id="w2" className='registerbox'>
         <h1>Signup</h1>
         {error && <p className="error">{error}</p>}
     <Form id="login" onSubmit={onSubmit}>

@@ -9,7 +9,7 @@
     overflow: hidden;
     flex-Direction: column;
 }
-#w2{
+.registerbox {
     border-radius: 25px;
     border-style: solid;
     background-color: aliceblue;
