@@ -30,12 +30,14 @@ export default function ResetPage() {
     return (
         <>
             <Navbarf></Navbarf>
-            <div>
-                <Form onSubmit={resetSubmit}>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type='email' ref={resetEMAIL} required></Form.Control>      
-                    <Button type="submit">Reset</Button>
-                </Form>
+            <div className='container'>
+                <section className='row'>
+                    <Form onSubmit={resetSubmit}>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type='email' ref={resetEMAIL} required></Form.Control>      
+                        <Button type="submit">Reset</Button>
+                    </Form>
+                </section>
             </div>
         </>
     )
