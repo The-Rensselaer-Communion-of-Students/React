@@ -19,6 +19,8 @@ export default function Loginpage() {
       {loading ? <h2>Loading...</h2> : <> {user ?  navigate("/dashboard"):<></> } </>}
         };
   return (
+    <>
+    <Navbarf></Navbarf>
     <div id="w">
         <div id="w2" className="shadow-lg loginbox p-4">
             <h1 className='pt-3 pb-4'>Login</h1>
@@ -36,5 +38,6 @@ export default function Loginpage() {
           </Form>
         </div>
     </div>
+    </>
   )
 }
