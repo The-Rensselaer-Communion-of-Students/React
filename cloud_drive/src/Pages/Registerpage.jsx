@@ -33,7 +33,7 @@ export default function Registerpage() {
         <Form.Control type="password" placeholder="Password" ref={psdRef}/>
         <Form.Label>Name</Form.Label>
         <Form.Control type="name" placeholder="Name" ref={nameRef}/>
-        <hr class="solid"/>
+        <hr className="solid"/>
         <div className="d-grid gap-2">
         <Button variant="primary" type="submit" size="lg">Sign Up</Button>
         <Button variant="primary" type="submit" size="lg">Sign Up With Google</Button>

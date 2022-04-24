@@ -18,6 +18,7 @@ import {
             <Route exact path='/login' element={<Loginpage/>} />
             <Route exact path='/register' element={<Registerpage/>} />
             <Route exact path='/dashboard' element={<Dashboard/>} />
+            <Route exact path="/folder/:folderId" component={Dashboard}/>
           </Routes>
         </Router>
       </>
