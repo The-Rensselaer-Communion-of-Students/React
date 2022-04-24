@@ -11,6 +11,7 @@
     flex-Direction: column;
 }
 .loginbox {
+    animation: onLoadBox 1s;
     height: 70vh;
     width: 50vh;
     border-radius: 25px;
@@ -65,6 +66,15 @@ label {
     place-items: center;
 }
 
+@keyframes onLoadBox {
+    0% {
+        transform: translateY(-30vh);
+    }
+
+    100% {
+        transform: translateY(0vh);
+    }
+}
 
 /*
 font-family: 'Alata', sans-serif;

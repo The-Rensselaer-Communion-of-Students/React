@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import "./Loginpage.css"
 import Navbarf from '../Components/Navbarf'
 
-
 export default function Loginpage() {
         const emailRef = useRef();
         const psdRef = useRef();

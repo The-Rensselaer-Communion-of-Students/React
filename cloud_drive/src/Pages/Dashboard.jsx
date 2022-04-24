@@ -2,6 +2,8 @@ import React from "react";
 import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Navbarf from "../Components/Navbarf";
+import './Dashboard.css'
+
 const Dashboard = () => {
   const { user, logoutUser } = useUserContext();
   const navigate = useNavigate();
