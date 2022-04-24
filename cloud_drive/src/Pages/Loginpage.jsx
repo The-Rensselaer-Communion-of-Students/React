@@ -24,15 +24,16 @@ export default function Loginpage() {
             <h1>Login</h1>
             {error && <p className="error">{error}</p>}
         <Form id="login" onSubmit={onSubmit}>
-            <Form.Label>Email Adress</Form.Label>
+            <Form.Label>Email Address</Form.Label>
             <Form.Control type="email" placeholder="example@gmail.com" ref={emailRef}/>
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" ref={psdRef}/>
             <hr className="solid"/>
-            <div className="d-grid gap-2">
-            <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Login</Button>
-            <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign In With Google</Button>
+            <div className="d-grid gap-2 justify-content-center">
+              <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Login</Button>
+              <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign In With Google</Button>
             </div>
+            <br></br>
         </Form>
         </div>
     </div>
