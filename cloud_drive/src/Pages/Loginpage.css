@@ -14,7 +14,8 @@
     height: 70vh;
     width: 50vh;
     border-radius: 25px;
-    border-style: solid hidden solid hidden;
+    border-style: solid hidden;
+    /*13, 11, 60*/
     background-color: rgb(13, 11, 60);
     font-family: Alata;
     color: antiquewhite;
