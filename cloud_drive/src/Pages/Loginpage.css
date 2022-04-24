@@ -11,10 +11,20 @@
     flex-Direction: column;
 }
 #w2{
+    height: 70vh;
+    width: 50vh;
     border-radius: 25px;
-    border-style: solid;
-    background-color: aliceblue;
+    border-style: solid hidden solid hidden;
+    background-color: rgb(13, 11, 60);
+    font-family: Alata;
+    color: antiquewhite;
 }
+
+#w2:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
 hr.solid {
     border-top: 3px solid #bbb;
   }
@@ -36,7 +46,6 @@ h1{
 
 div.d-grid > Button {
     width: 80%;
-    font-family: Alata;
     background-color: crimson;
 }
 
@@ -47,7 +56,6 @@ div.d-grid > Button:hover {
 }
 
 label {
-    font-family: Alata;
     font-weight: bold;
 }
 
@@ -55,6 +63,8 @@ label {
 .d-grid {
     place-items: center;
 }
+
+
 /*
 font-family: 'Alata', sans-serif;
 font-family: 'Amaranth', sans-serif;

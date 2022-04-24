@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import "./Loginpage.css"
+import Navbarf from '../Components/Navbarf'
 
 
 export default function Loginpage() {
@@ -21,7 +22,7 @@ export default function Loginpage() {
   return (
     <div id="w">
         <div id="w2" className="shadow-lg p-4">
-            <h1>Login</h1>
+            <h1 className='pt-3 pb-4'>Login</h1>
             {error && <p className="error">{error}</p>}
           <Form id="login" onSubmit={onSubmit}>
               <Form.Label>Email Address</Form.Label>
@@ -29,7 +30,7 @@ export default function Loginpage() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" ref={psdRef}/>
               <hr className="solid"/>
-              <div className="d-grid gap-2 justify-content-center">
+              <div className="d-grid gap-2 justify-content-center m-5">
                 <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0 shadow'>Login</Button>
                 <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0 shadow'>Sign In With Google</Button>
               </div>
