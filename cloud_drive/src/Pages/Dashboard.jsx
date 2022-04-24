@@ -21,7 +21,7 @@ const Dashboard = () => {
     <Navbarf/>
      <div>
       <h1>Dashboard </h1>
-      <h2>Name : {user.displayName}</h2>
+      <h2>Welcome {user.displayName},</h2>
       <h2>Email : {user.email}</h2>
       <button onClick={logout}>Log out</button>
       <button onClick={reset}>Reset Password</button>

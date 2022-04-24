@@ -18,6 +18,9 @@ export default function Loginpage() {
           if (email && password) signInUser(email, password);
       {loading ? <h2>Loading...</h2> : <> {user ?  navigate("/dashboard"):<></> } </>}
         };
+        const resetRedirect = (e) => {
+          navigate('/reset')
+        }
   return (
     <>
     <Navbarf></Navbarf>
@@ -31,9 +34,10 @@ export default function Loginpage() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" ref={psdRef}/>
               <hr className="solid"/>
-              <div className="d-grid gap-2 justify-content-center m-5">
+              <div className="d-grid gap-2 justify-content-center">
                 <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0 shadow'>Login</Button>
                 <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0 shadow'>Sign In With Google</Button>
+                <Button variant="primary" type="button" size="lg" className='rounded-pill border-0 shadow' onClick={resetRedirect}>Reset Password</Button>
               </div>
           </Form>
         </div>
