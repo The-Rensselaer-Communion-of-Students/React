@@ -9,11 +9,7 @@
     overflow: hidden;
     flex-Direction: column;
 }
-.registerbox {
-    border-radius: 25px;
-    border-style: solid;
-    background-color: aliceblue;
-}
+
 hr.solid {
     border-top: 3px solid #bbb;
   }

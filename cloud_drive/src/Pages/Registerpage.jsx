@@ -23,7 +23,7 @@ export default function Registerpage() {
     }
   return (
     <div id="w">
-    <div id="w2" className='registerbox'>
+    <div id="w2" className='loginbox p-4'>
         <h1>Signup</h1>
         {error && <p className="error">{error}</p>}
     <Form id="login" onSubmit={onSubmit}>
@@ -34,9 +34,9 @@ export default function Registerpage() {
         <Form.Label>Name</Form.Label>
         <Form.Control type="name" placeholder="Name" ref={nameRef}/>
         <hr class="solid"/>
-        <div className="d-grid gap-2">
-        <Button variant="primary" type="submit" size="lg">Sign Up</Button>
-        <Button variant="primary" type="submit" size="lg">Sign Up With Google</Button>
+        <div className="d-grid gap-2 justify-content-center pt-4">
+        <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign Up</Button>
+        <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign Up With Google</Button>
         </div>
     </Form>
     </div>
