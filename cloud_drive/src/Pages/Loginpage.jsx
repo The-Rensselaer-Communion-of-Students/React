@@ -20,21 +20,20 @@ export default function Loginpage() {
         };
   return (
     <div id="w">
-        <div id="w2">
+        <div id="w2" className="shadow-lg p-4">
             <h1>Login</h1>
             {error && <p className="error">{error}</p>}
-        <Form id="login" onSubmit={onSubmit}>
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control type="email" placeholder="example@gmail.com" ref={emailRef}/>
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" ref={psdRef}/>
-            <hr className="solid"/>
-            <div className="d-grid gap-2 justify-content-center">
-              <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Login</Button>
-              <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign In With Google</Button>
-            </div>
-            <br></br>
-        </Form>
+          <Form id="login" onSubmit={onSubmit}>
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control type="email" placeholder="example@gmail.com" ref={emailRef}/>
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" ref={psdRef}/>
+              <hr className="solid"/>
+              <div className="d-grid gap-2 justify-content-center">
+                <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0 shadow'>Login</Button>
+                <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0 shadow'>Sign In With Google</Button>
+              </div>
+          </Form>
         </div>
     </div>
   )
