@@ -5,7 +5,7 @@ import { NavItem } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 export default function Navbarf() {
   return (
-    <div style={{ display: 'block'}}>
+    <div style={{ display: 'block', paddingLeft: "10px"}}>
     <Navbar bg="light">
       <Navbar.Brand href="/">
         <img
@@ -18,7 +18,7 @@ export default function Navbarf() {
       </Navbar.Brand>
       <Nav className="justify-content-end" style={{ width: "100%" }}>
     <Nav.Item>
-      <Nav.Link href="/UserInfo">Account</Nav.Link>
+      <Nav.Link href="/dashboard">Account</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link href="/Files">Files</Nav.Link>

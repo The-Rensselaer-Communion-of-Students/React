@@ -27,7 +27,7 @@ export default function Landingpage() {
     <br/><br/>
     <Button href="register" variant="light" size="lg" className="rounded-pill border border-secondary border-2"><h1 className='display-4'>Register</h1></Button> 
     <br/>
-    <Button href="login" variant="light" size="lg" className="rounded-pill border border-secondary border-2"><h1 className='display-4'>Login</h1></Button> 
+    <Button href="login" variant="light" size="sm" className="rounded-pill border border-secondary border-2"><h1 className='display-4'>Login</h1></Button> 
 </div>
       
       </>
