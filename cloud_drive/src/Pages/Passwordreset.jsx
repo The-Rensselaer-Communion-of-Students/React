@@ -7,7 +7,7 @@ import Navbarf from '../Components/Navbarf';
 
 
 export default function ResetPage() {
-    const { user, forgotPassword } = useUserContext()
+    const { user, forgotPassword, logoutUser } = useUserContext()
     const navigate = useNavigate()
     const resetEMAIL = useRef()
     var resetFail = null;

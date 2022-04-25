@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Navbarf from "../Components/Navbarf";
-import './Passwordreset.css'
+import "./Dashboard.css"
 
 const Dashboard = () => {
   const { user, logoutUser, changeProfilePic } = useUserContext();
@@ -32,15 +32,17 @@ const Dashboard = () => {
     <Navbarf/>
      <div>
       <h1>Dashboard </h1>
-      
-      <div className='container'>
+      <h2>Welcome {user.displayName},</h2>
+      <h2>Email : {user.email}</h2>
+      <div className='container position-absolute top-50 start-50 translate-middle'>
         <div className='row'>
           <div className='column'>
-              <h2>Welcome {user.displayName},</h2>
-              <h2>Email : {user.email}</h2>
-              <button onClick={logout} className='btn btn-lg'>Log out</button>
-              <button onClick={reset} className='btn btn-lg'>Reset Password</button>
-              <button type='button' className='btn btn-lg' data-bs-toggle='collapse' data-bs-target='#profilepicForm' aria-expanded='false' aria-controls='profilepicForm'>Change Profile Picture</button>
+              <div className='d-grid gap-2'>
+                <button onClick={logout} className='btn btn-lg rounded-pill shadow' id='dashbutton'>Log out</button>
+                <button onClick={reset} className='btn btn-lg rounded-pill shadow' id='dashbutton'>Reset Password</button>
+                <button className='btn btn-lg rounded-pill shadow' id='dashbutton'>Delete Account</button>
+                <button type='button' className='btn btn-lg rounded-pill shadow' id='dashbutton' data-bs-toggle='collapse' data-bs-target='#profilepicForm' aria-expanded='false' aria-controls='profilepicForm'>Change Profile Picture</button>
+              </div>
               <Form onSubmit={onSubmit} id="profilepicForm" className='collapse'>
                 <Form.FloatingLabel>Picture URL</Form.FloatingLabel>
                 <Form.Control ref={imageURL}></Form.Control>
