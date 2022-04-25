@@ -58,12 +58,12 @@ export default function Registerpage() {
                       <Form.Label>Password</Form.Label>
                       <Form.Control type="password" placeholder="Password" ref={psdRef} />
                       
-                      {/* Password confirmation */}
-                      {/* Create another form control, onSubmit check for different text between Password and Confirm Password fields */}
+                      {/* Password confirmation }
+                      {/* Create another form control, onSubmit check for different text between Password and Confirm Password fields }
   /*
                       <Form.Label>Confirm Password</Form.Label>
                       <Form.Control type="password" placeholder="Password" />
-                      {/* Password confirmation END */}
+                      {/* Password confirmation END }
 /*                      
                       <Form.Label>Name</Form.Label>
                       <Form.Control type="name" placeholder="Name" ref={nameRef} />
