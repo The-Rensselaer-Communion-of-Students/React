@@ -10,6 +10,7 @@
     overflow: hidden;
     flex-Direction: column;
 }
+
 .loginbox {
     animation: onLoadBox 1s;
     height: 70vh;
@@ -27,15 +28,37 @@
     transition: 1s;
 }
 
+
+/*
+#w2{
+    border-radius: 10px;
+    border-style: solid;
+    background-color: aliceblue;
+}
+*/
 hr.solid {
     border-top: 3px solid #bbb;
-  }
+}
+
 h1{
     text-align: center;
+    margin: 10px;
 }
+
+p{
+    text-align: center;
+    margin: 1px;
+}
+
+#dontHave{
+    text-align: center;
+    margin: 1px;
+}
+
 #google{
     align-self: center;
 }
+
 .error {
     background-color: tomato;
     color: white;
@@ -45,6 +68,7 @@ h1{
     max-width: 400px;
     margin-bottom: 18px;
 }
+
 
 div.d-grid > Button {
     width: 80%;
@@ -101,3 +125,19 @@ font-family: 'Staatliches', cursive;
 font-family: 'Stick No Bills', sans-serif;
 font-family: 'Teko', sans-serif;
 */
+
+/*
+.btn {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+*/
+
