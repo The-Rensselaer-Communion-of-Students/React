@@ -64,7 +64,7 @@ export default function Loginpage() {
                       <Button variant="primary" type="submit" size="lg">Sign In With Google</Button>
                   </div>
                   <div id="dontHave">
-                      {/* Forgot your password? stuff here [check userContext.js] */}
+                      {/* Forgot your password? stuff here [check userContext.js]}
                       /*<a href="register">Don't have an account?</a>
                   </div>
               </Form>
