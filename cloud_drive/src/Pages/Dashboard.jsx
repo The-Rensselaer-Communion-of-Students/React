@@ -31,7 +31,7 @@ const Dashboard = () => {
     <>
     <Navbarf/>
      <div>
-      <h1>Dashboard </h1>
+      <h1 className='display-3'>Dashboard </h1>
       <h2>Welcome {user.displayName},</h2>
       <h2>Email : {user.email}</h2>
       <div className='container position-absolute top-50 start-50 translate-middle'>
