@@ -7,7 +7,7 @@ import {
   updateProfile,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../firebase/firestore";
 import axios from "axios";
 
 export const UserContext = createContext({});

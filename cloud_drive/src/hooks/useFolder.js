@@ -2,13 +2,14 @@ import { useEffect, useReducer, useState} from "react";
 import axios from "axios";
 import { UserContext, useUserContext } from "../context/userContext";
 import { async } from "@firebase/util";
+import {database} from '../firebase/firestore'
 let ACTIONS ={
     SELECT_FOLDER: 'select-folder',
     UPDATE_FOLDER: 'update-folder',
     SET_CHILD_FOLDERS:'set-child-folders',
     ADD_FOLDER: 'add folder'
 }
-let ROOT_FOLDER={name: 'Root', id:null, path:[], addf:false}
+export const ROOT_FOLDER={name: 'Root', id:null, path:[], addf:false}
 function reducer(state, {type, payload}){
     switch(type){
         case ACTIONS.SELECT_FOLDER:
@@ -47,51 +48,57 @@ export function useFolder(folderId=null,folder=null){
         dispatch({type: ACTIONS.SELECT_FOLDER, payload:{folderId,folder}})
     }, [folderId,folder])
     useEffect(()=>{
-        function formatdoc(doc){
-            return{"id":doc._id,"name":doc.name,"ParentID":doc.ParentID, "userID":doc.userID,"timestamp":doc.timestamp};
-        }
-        async function fetchData(){
-            let res = await axios.get("http://localhost:3001/getfolder/"+folderId).catch(res=>{
-                return dispatch({
-                    type: ACTIONS.UPDATE_FOLDER, 
-                    payload: {folder: ROOT_FOLDER}
-                })  
-            })
+        if (folderId == null) {
             return dispatch({
-                type: ACTIONS.UPDATE_FOLDER, 
-                payload: {folder: formatdoc(res.data)}
+              type: ACTIONS.UPDATE_FOLDER,
+              payload: { folder: ROOT_FOLDER },
             })
-        }
-        if(folderId==null){
-            return dispatch({
-                type: ACTIONS.UPDATE_FOLDER, 
-                payload: {folder: ROOT_FOLDER}
+          }
+      
+          database.folders
+            .doc(folderId)
+            .get()
+            .then(doc => {
+              dispatch({
+                type: ACTIONS.UPDATE_FOLDER,
+                payload: { folder: database.formatDoc(doc) },
+              })
             })
-        }
-        let s=fetchData();
-        
+            .catch(() => {
+              dispatch({
+                type: ACTIONS.UPDATE_FOLDER,
+                payload: { folder: ROOT_FOLDER },
+              })
+            })
         
     },[folderId])
     useEffect(()=>{
-        var request = new XMLHttpRequest();
-        let data=null;
-	request.open('GET', "http://localhost:3001/getfolderkid/"+folderId+"/"+user.uid, true);
-	
-	request.onload = () => {
-		if (request.readyState === 4 && request.status === 200) {
-			console.log((JSON.parse(request.responseText)));
-            data=JSON.parse(request.responseText);
-            return dispatch({
-                type: ACTIONS.SET_CHILD_FOLDERS, 
-                payload: {childFolders: data}
+        return database.folders
+      .where("parentId", "==", folderId)
+      .where("userId", "==", user.uid)
+      .orderBy("createdAt")
+      .onSnapshot(snapshot => {
+        dispatch({
+          type: ACTIONS.SET_CHILD_FOLDERS,
+          payload: { childFolders: snapshot.docs.map(database.formatDoc) },
+        })
+      })      
+    },[folderId,user])
+    useEffect(() => {
+        return (
+          database.files
+            .where("folderId", "==", folderId)
+            .where("userId", "==", user.uid)
+            // .orderBy("createdAt")
+            .onSnapshot(snapshot => {
+              dispatch({
+                type: ACTIONS.SET_CHILD_FILES,
+                payload: { childFiles: snapshot.docs.map(database.formatDoc) },
+              })
             })
-		} else {
-			//Error
-            console.log("HELL");
-		}
-	};
-	request.send();        
-    },[folderId,user,state.addf])
+        )
+      }, [folderId, user])
+    
     return state;
     
     

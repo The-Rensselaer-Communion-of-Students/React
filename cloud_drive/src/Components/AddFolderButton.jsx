@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { useUserContext } from "../context/userContext";
-import axios from 'axios';
+import {database} from '../firebase/firestore'
+
 export default function AddFolderButton({ currentFolder }) {
     const {user} = useUserContext();
     const [open, setOpen]= useState(false);
@@ -19,7 +20,12 @@ export default function AddFolderButton({ currentFolder }) {
         if(currentFolder==null){
             return;
         }
-        axios.put("http://localhost:3001/creatfolder/"+user.uid,{"name":name,"parentId":currentFolder.id});
+        database.folders.add({
+            name: name,
+            parentId: currentFolder.id,
+            userId: user.uid,
+            createdAt: database.getCurrentTimestamp(),
+          })
         //Make Folder In DB
         setName("");
         closeModal();

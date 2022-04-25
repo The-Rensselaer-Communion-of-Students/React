@@ -6,8 +6,13 @@ import { Container } from "react-bootstrap";
 import AddFolderButton from "../Components/AddFolderButton";
 import { useFolder } from "../hooks/useFolder";
 import Folder from "../Components/Folder";
+import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import AddFileButton from "../Components/AddFileButton";
 export default  function Dashboard(){
-  const {folder,childFolders}=useFolder();
+  const { folderId } = useParams()
+  const { state = {} } = useLocation()
+  const { folder, childFolders, childFiles } = useFolder()
   
   //console.log(folder);
   //console.log(childFolders);
@@ -24,6 +29,7 @@ export default  function Dashboard(){
     <Navbarf/>
     <Container fluid>
       <AddFolderButton currentFolder={folder}/>
+      <AddFileButton currentFolder={folder}/>
       {folder && <Folder folder={folder}></Folder>}
       <div className="d-flex align-items-center">
         </div>
