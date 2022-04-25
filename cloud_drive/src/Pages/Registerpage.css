@@ -10,11 +10,13 @@
     flex-Direction: column;
 }
 
+/*
 #w2{
     border-radius: 10px;
     border-style: solid;
     background-color: aliceblue;
 }
+*/
 
 hr.solid {
     border-top: 3px solid #bbb;
@@ -48,7 +50,7 @@ p{
     max-width: 400px;
     margin-bottom: 18px;
 }
-
+/*
 .btn {
     border: none;
     color: white;
@@ -61,7 +63,7 @@ p{
     cursor: pointer;
     border-radius: 25px;
 }
-
+*/
 #login {
     margin: 20px;
 }

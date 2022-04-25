@@ -1,3 +1,4 @@
+
 #w{
     display: flex;
     align-Items: center;
@@ -10,12 +11,31 @@
     flex-Direction: column;
 }
 
+.loginbox {
+    animation: onLoadBox 1s;
+    height: 70vh;
+    width: 50vh;
+    border-radius: 25px;
+    border-style: solid hidden;
+    /*13, 11, 60*/
+    background-color: rgb(13, 11, 60);
+    font-family: Alata;
+    color: antiquewhite;
+}
+
+#w2:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+/*
 #w2{
     border-radius: 10px;
     border-style: solid;
     background-color: aliceblue;
 }
-
+*/
 hr.solid {
     border-top: 3px solid #bbb;
 }
@@ -49,6 +69,64 @@ p{
     margin-bottom: 18px;
 }
 
+
+div.d-grid > Button {
+    width: 80%;
+    background-color: crimson;
+}
+
+div.d-grid > Button:hover {
+    background-color: cadetblue;
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+.d-grid {
+    place-items: center;
+}
+
+@keyframes onLoadBox {
+    0% {
+        transform: translateY(-30vh);
+    }
+
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+/*
+font-family: 'Alata', sans-serif;
+font-family: 'Amaranth', sans-serif;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Courier Prime', monospace;
+font-family: 'Cutive Mono', monospace;
+font-family: 'Fredoka One', cursive;
+font-family: 'Gowun Batang', serif;
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Kosugi Maru', sans-serif;
+font-family: 'Lexend Giga', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Roboto Slab', serif;
+font-family: 'Ropa Sans', sans-serif;
+font-family: 'Share Tech Mono', monospace;
+font-family: 'Staatliches', cursive;
+font-family: 'Stick No Bills', sans-serif;
+font-family: 'Teko', sans-serif;
+*/
+
+/*
 .btn {
     border: none;
     color: white;
@@ -61,3 +139,5 @@ p{
     cursor: pointer;
     border-radius: 25px;
 }
+*/
+
