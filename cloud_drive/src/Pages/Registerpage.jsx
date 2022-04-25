@@ -7,23 +7,35 @@ import { useNavigate } from "react-router-dom";
 import "./Registerpage.css"
 import Navbarf from '../Components/Navbarf'
 import * as Yup from 'yup';
-
+import { Formik } from "formik";
+import { userSchema } from '../Validation/validation';
 
 export default function Registerpage() {
     const emailRef = useRef();
     const nameRef = useRef();
     const psdRef = useRef();
+    const cnfPsdRef = useRef();
     const navigate = useNavigate();
     const {user, loading, error, registerUser } = useUserContext();
     
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const name = nameRef.current.value;
         const password = psdRef.current.value;
-        if (email && password && name) registerUser(email, password, name);
-        {loading ? <h2>Loading...</h2> : <> {user ?  navigate("/dashboard"):<></> } </>}
-    }
+        const confirmedPassword = cnfPsdRef.current.value;
+        const isValid = await userSchema.isValid({email, password, confirmedPassword, name});
+        console.log(isValid);
+        if (email && password && name && isValid) registerUser(email, password, name);
+        else if (!email || !password || !name) {
+            alert("Please fill in all fields");
+        } 
+        else if (password !== confirmedPassword) {
+            alert('Both passwords must match');
+            return;
+        }
+        {loading ? <h2>Loading...</h2> : <> {user ?  navigate("/dashboard"):<></> } </>}    }
+
   return (
 
     <div id="w">
@@ -62,9 +74,15 @@ export default function Registerpage() {
                       {/* Create another form control, onSubmit check for different text between Password and Confirm Password fields }
   /*
                       <Form.Label>Confirm Password</Form.Label>
+<<<<<<< HEAD
+                      <Form.Control type="password" placeholder="Confirm Password" ref={cnfPsdRef} />
+                      {/* Password confirmation END */}
+                      
+=======
                       <Form.Control type="password" placeholder="Password" />
                       {/* Password confirmation END }
 /*                      
+>>>>>>> origin/main
                       <Form.Label>Name</Form.Label>
                       <Form.Control type="name" placeholder="Name" ref={nameRef} />
                       <hr class="solid" />
