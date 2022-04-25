@@ -1,0 +1,17 @@
+#dashbutton {
+    font-family: Alata;
+    background-color: rgb(186, 29, 60);
+    color: whitesmoke;
+}
+
+#w{
+    display: flex;
+    align-Items: center;
+    justify-Content: center;
+    height: 100vh;
+    margin: 0;
+    background-Image:url("/public/cloud.jpg");
+    background-Size: cover;
+    overflow: hidden;
+    flex-Direction: column;
+}

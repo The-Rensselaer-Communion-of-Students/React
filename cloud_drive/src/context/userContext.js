@@ -63,6 +63,16 @@ export const UserContextProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   };
 
+  const changeProfilePic = (picture) => {
+    console.log(user, picture)
+    const dN = user.displayName
+    return updateProfile(user, 
+      {
+        dN,
+        picture
+      })
+  }
+
   const contextValue = {
     user,
     loading,
@@ -71,6 +81,7 @@ export const UserContextProvider = ({ children }) => {
     registerUser,
     logoutUser,
     forgotPassword,
+    changeProfilePic
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

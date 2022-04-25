@@ -2,6 +2,8 @@ import React from 'react'
 import Navbarf from '../Components/Navbarf'
 import { Button } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom";
+import './Landingpage.css'
+
 export default function Landingpage() {
   let navigate = useNavigate(); 
   const routeChange = () =>{ 
@@ -25,9 +27,9 @@ export default function Landingpage() {
     <h1 className="display-1 text-white">CloudDrive <br/></h1>
     <h2 className="display-3 ">Cloud Storage Simplified</h2>
     <br/><br/>
-    <Button href="register" variant="light" size="lg" className="rounded-pill border border-secondary border-2"><h1 className='display-4'>Register</h1></Button> 
+    <Button href="register" variant="light" size="lg" className="rounded-pill border border-secondary border-0 shadow" id="landingbuttons"><h4 className='display-4'>Register</h4></Button> 
     <br/>
-    <Button href="login" variant="light" size="lg" className="rounded-pill border border-secondary border-2"><h1 className='display-4'>Login</h1></Button> 
+    <Button href="login" variant="light" size="lg" className="rounded-pill border border-secondary border-0 shadow" id='landingbuttons'><h4 className='display-4'>Login</h4></Button> 
 </div>
       
       </>
