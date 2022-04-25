@@ -32,16 +32,26 @@ const Dashboard = () => {
     <Navbarf/>
      <div>
       <h1>Dashboard </h1>
-      <h2>Welcome {user.displayName},</h2>
-      <h2>Email : {user.email}</h2>
-      <button onClick={logout}>Log out</button>
-      <button onClick={reset}>Reset Password</button>
-      <button type='button' data-bs-toggle='collapse' data-bs-target='#profilepicForm' aria-expanded='false' aria-controls='profilepicForm'>Change Profile Picture</button>
-      <Form onSubmit={onSubmit} id="profilepicForm" className='collapse'>
-        <Form.FloatingLabel>Picture URL</Form.FloatingLabel>
-        <Form.Control ref={imageURL}></Form.Control>
-        <button type='submit'>Change</button>
-      </Form>
+      
+      <div className='container'>
+        <div className='row'>
+          <div className='column'>
+              <h2>Welcome {user.displayName},</h2>
+              <h2>Email : {user.email}</h2>
+              <button onClick={logout} className='btn btn-lg'>Log out</button>
+              <button onClick={reset} className='btn btn-lg'>Reset Password</button>
+              <button type='button' className='btn btn-lg' data-bs-toggle='collapse' data-bs-target='#profilepicForm' aria-expanded='false' aria-controls='profilepicForm'>Change Profile Picture</button>
+              <Form onSubmit={onSubmit} id="profilepicForm" className='collapse'>
+                <Form.FloatingLabel>Picture URL</Form.FloatingLabel>
+                <Form.Control ref={imageURL}></Form.Control>
+                <button type='submit' className='btn btn-lg'>Change</button>
+              </Form>
+          </div>
+          <div className='column'>
+            {/*Table with all documents displayed here*/}
+          </div>
+        </div>
+      </div>
     </div>
     </>
    
