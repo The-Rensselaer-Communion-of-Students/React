@@ -1,4 +1,3 @@
-
 import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap'
 import React, { useRef } from "react";
@@ -7,26 +6,41 @@ import { useNavigate } from "react-router-dom";
 import "./Registerpage.css"
 import Navbarf from '../Components/Navbarf'
 import * as Yup from 'yup';
-
+import { Formik } from "formik";
+import { userSchema } from '../Validation/validation';
 
 export default function Registerpage() {
     const emailRef = useRef();
     const nameRef = useRef();
     const psdRef = useRef();
+    const cnfPsdRef = useRef();
     const navigate = useNavigate();
     const {user, loading, error, registerUser } = useUserContext();
     
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
         const name = nameRef.current.value;
         const password = psdRef.current.value;
-        if (email && password && name) registerUser(email, password, name);
-        {loading ? <h2>Loading...</h2> : <> {user ?  navigate("/dashboard"):<></> } </>}
-    }
+        const confirmedPassword = cnfPsdRef.current.value;
+        const isValid = await userSchema.isValid({email, password, confirmedPassword, name});
+        console.log(isValid);
+        if (email && password && name && isValid) registerUser(email, password, name);
+        else if (!email || !password || !name) {
+            alert("Please fill in all fields");
+        } 
+        else if (password !== confirmedPassword) {
+            alert('Both passwords must match');
+            return;
+        }
+        {loading ? <h2>Loading...</h2> : <> {user ?  navigate("/dashboard"):<></> } </>}    }
+
   return (
 
+    <>
+    <Navbarf/>
     <div id="w">
+<<<<<<< HEAD
     <div id="w2" className='loginbox p-4'>
         <h1>Signup</h1>
         {error && <p className="error">{error}</p>}
@@ -88,11 +102,29 @@ export default function Registerpage() {
                           <Button variant="primary" type="submit" size="lg" id="signup-google">Sign Up With Google</Button>
                       </div>
                       <div id="alreadyHave">
+=======
+          <div id="w2" className='loginbox p-4'>
+              <h1>Signup</h1>
+              {error && <p className="error">{error}</p>}
+              <Form id="login" onSubmit={onSubmit}>
+                  <Form.Label>Email Adress</Form.Label>
+                  <Form.Control type="email" placeholder="example@gmail.com" ref={emailRef} />
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password" ref={psdRef} />
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="name" placeholder="Name" ref={nameRef} />
+                  <hr class="solid" />
+                  <div className="d-grid gap-2 justify-content-center pt-4">
+                      <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign Up</Button>
+                      <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign Up With Google</Button>
+                  </div>
+                  <div id="alreadyHave">
+>>>>>>> 77a643b95c3c0506c40d7601430888e3d89a43f9
                           <a href="login">Already have an account?</a>
-                      </div>
-                  </Form>
-              </div>
-          </div></>
-*/
+                  </div>
+              </Form>
+          </div>
+      </div>
+      </>
   )
 }

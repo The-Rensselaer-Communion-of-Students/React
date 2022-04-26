@@ -5,35 +5,31 @@ import { NavItem } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 export default function Navbarf() {
   return (
-    <div style={{ display: 'block'}}>
+    <div style={{ display: 'block', paddingLeft: "10px"}}>
     <Navbar bg="light">
-      <Navbar.Brand href="/">
+    <Navbar.Brand href="/">
         <img
-          src="logo.jpg"
-          alt="Sample Brand Logo"
-          width="35"
-          className="align-top d-inline-block"
-          height="35"
+            src="logo.jpg"
+            alt="Sample Brand Logo"
+            width="35"
+            className="align-top d-inline-block"
+            height="35"
         />CloudDrive
-      </Navbar.Brand>
-      <Nav className="justify-content-end" style={{ width: "100%" }}>
-    <Nav.Item>
-      <Nav.Link href="/UserInfo">Account</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link href="/Files">Files</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link href="/Upload">Upload</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link href="/Editor">Editor</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link href="/help">Help</Nav.Link>
-    </Nav.Item>
-    
-  </Nav>
+    </Navbar.Brand>
+    <Nav className="justify-content-end" style={{ width: "100%" }}>
+        <Nav.Item>
+        <Nav.Link href="/dashboard">Account</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+        <Nav.Link href="/Files">Files</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+        <Nav.Link href="/Upload">Upload</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+        <Nav.Link href="/help">Help</Nav.Link>
+        </Nav.Item>
+    </Nav>
     </Navbar>
   </div>
   )
