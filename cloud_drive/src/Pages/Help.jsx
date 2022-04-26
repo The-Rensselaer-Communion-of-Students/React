@@ -12,8 +12,10 @@ const HelpPage = () => {
         <div className="container">
             <section className="row">
                 <div className="column">
-                    <h2>CloudDrive Support</h2>
-                    
+                    <h2>Welcome to CloudDrive Support!</h2>
+                    <p>
+                        This page is designed to help users understand CloudDrive.
+                    </p>
                 </div>
             </section>
         </div>

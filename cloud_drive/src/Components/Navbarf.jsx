@@ -18,7 +18,7 @@ export default function Navbarf() {
       </Navbar.Brand>
       <Nav className="justify-content-end" style={{ width: "100%" }}>
     <Nav.Item>
-      <Nav.Link href="/UserInfo">Account</Nav.Link>
+      <Nav.Link href="/dashboard">Account</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link href="/Files">Files</Nav.Link>

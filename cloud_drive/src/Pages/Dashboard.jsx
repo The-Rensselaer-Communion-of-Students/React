@@ -4,6 +4,7 @@ import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Navbarf from "../Components/Navbarf";
 import "./Dashboard.css"
+import { Table } from 'react-bootstrap';
 
 const Dashboard = () => {
   const { user, logoutUser, changeProfilePic } = useUserContext();
@@ -50,7 +51,21 @@ const Dashboard = () => {
               </Form>
           </div>
           <div className='column'>
-            {/*Table with all documents displayed here*/}
+            <Table responsive>
+              <thead>
+                <tr>
+                  <th>File Number</th>
+                  <th>Name</th>
+                  <th>Size</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </Table>
           </div>
         </div>
       </div>
