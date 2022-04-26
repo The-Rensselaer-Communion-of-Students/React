@@ -7,7 +7,8 @@ import {
   updateProfile,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../firebase/firestore";
+import axios from "axios";
 
 export const UserContext = createContext({});
 
@@ -44,7 +45,10 @@ export const UserContextProvider = ({ children }) => {
       )
       .then((res) => console.log(res))
       .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      .finally(() => {
+
+        setLoading(false);
+      });
   };
 
   const signInUser = async (email, password) => {

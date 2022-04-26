@@ -30,6 +30,7 @@ export default function Registerpage() {
     <div id="w2" className='loginbox p-4'>
         <h1>Signup</h1>
         {error && <p className="error">{error}</p>}
+<<<<<<< HEAD
         <Form id="login" onSubmit={onSubmit}>
           <Form.Label>Email Adress</Form.Label>
           <Form.Control type="email" placeholder="example@gmail.com" ref={emailRef}/>
@@ -41,6 +42,19 @@ export default function Registerpage() {
         <div className="d-grid gap-2 justify-content-center pt-4">
         <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign Up</Button>
         <Button variant="primary" type="submit" size="lg" className='rounded-pill border-0'>Sign Up With Google</Button>
+=======
+    <Form id="login" onSubmit={onSubmit}>
+        <Form.Label>Email Adress</Form.Label>
+        <Form.Control type="email" placeholder="example@gmail.com" ref={emailRef}/>
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" ref={psdRef}/>
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="name" placeholder="Name" ref={nameRef}/>
+        <hr className="solid"/>
+        <div className="d-grid gap-2">
+        <Button variant="primary" type="submit" size="lg">Sign Up</Button>
+        <Button variant="primary" type="submit" size="lg">Sign Up With Google</Button>
+>>>>>>> filesystem
         </div>
         </Form>
     </div>

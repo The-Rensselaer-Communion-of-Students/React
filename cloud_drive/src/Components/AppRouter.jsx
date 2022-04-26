@@ -24,6 +24,7 @@ import {
             <Route exact path='/reset' element={<PasswordReset/>} />
             <Route exact path='/editor' element={<Editor/>} />
             <Route exact path='/upload' element={<Upload/>} />
+            <Route exact path="/folder/:folderId" element={<Dashboard/>}/>
           </Routes>
         </Router>
       </>
