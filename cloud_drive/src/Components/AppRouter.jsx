@@ -12,6 +12,7 @@ import {
   import PasswordReset from '../Pages/Passwordreset'
   import Editor from '../Pages/Editor'
   import Upload from '../Pages/Upload'
+  import Help from '../Pages/Help'
   export default function AppRouter(props) {
     return (
       <>
@@ -24,6 +25,7 @@ import {
             <Route exact path='/reset' element={<PasswordReset/>} />
             <Route exact path='/editor' element={<Editor/>} />
             <Route exact path='/upload' element={<Upload/>} />
+            <Route exact path='/help' element={<Help/>} />
           </Routes>
         </Router>
       </>
