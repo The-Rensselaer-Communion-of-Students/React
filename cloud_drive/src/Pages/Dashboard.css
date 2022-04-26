@@ -15,3 +15,24 @@
     overflow: hidden;
     flex-Direction: column;
 }
+
+#folderBG {
+    background-color: rgb(243, 241, 219);
+    font-family: Alata;
+    height: 60vh;
+    border-radius: 25px;
+    border-style: solid hidden;
+}
+
+#DashboardWelcome, #AccountInfo {
+    color: antiquewhite;
+}
+
+#logoutButton {
+    width: 70vh;
+    position: absolute;
+    right: 50;
+    bottom: 0;
+    background-color: crimson;
+    font-family: Alata;
+}
