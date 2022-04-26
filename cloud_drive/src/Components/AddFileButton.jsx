@@ -8,7 +8,7 @@ import {database,storage} from '../firebase/firestore'
 import { v4 as uuidV4 } from "uuid"
 import { ProgressBar, Toast } from "react-bootstrap"
 import { ROOT_FOLDER  } from "../hooks/useFolder";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable,getDownloadURL  } from "firebase/storage";
 
 export default function AddFileButton({ currentFolder }) {
   const [uploadingFiles, setUploadingFiles] = useState([])
@@ -28,12 +28,8 @@ export default function AddFileButton({ currentFolder }) {
         ? `${currentFolder.path.join("/")}/${file.name}`
         : `${currentFolder.path.join("/")}/${currentFolder.name}/${file.name}`
 
-    const uploadTask = ref(storage,`/files/${user.uid}/${filePath}`)
-    console.log(uploadTask);
-    uploadBytes(storage, file).then((snapshot) => {
-        console.log('Uploaded a blob or file!');
-      }).catch((e)=>{console.log("HI");})
-    /*
+        const storageRef = ref(storage, `files/${file.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, file);
     uploadTask.on(
       "state_changed",
       snapshot => {
@@ -65,7 +61,7 @@ export default function AddFileButton({ currentFolder }) {
           })
         })
 
-        uploadTask.snapshot.ref.getDownloadURL().then(url => {
+        getDownloadURL(storageRef).then(url => {
           database.files
             .where("name", "==", file.name)
             .where("userId", "==", user.uid)
@@ -88,7 +84,6 @@ export default function AddFileButton({ currentFolder }) {
         })
       }
     )
-    */
   }
 
   return (
