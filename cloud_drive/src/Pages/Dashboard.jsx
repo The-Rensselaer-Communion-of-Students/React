@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Navbarf from "../Components/Navbarf";
-import { Container } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import AddFolderButton from "../Components/AddFolderButton";
 import { useFolder } from "../hooks/useFolder";
 import Folder from "../Components/Folder";
@@ -12,6 +12,7 @@ import { useLocation } from "react-router-dom";
 import AddFileButton from "../Components/AddFileButton";
 import File from "../Components/File";
 import FolderBreadcrumbs from '../Components/TopDash'
+import './Dashboard.css'
 export default  function Dashboard(){
   const { folderId } = useParams()
   const { state = {} } = useLocation()
@@ -21,6 +22,7 @@ export default  function Dashboard(){
   //console.log(childFolders);
   const { user, logoutUser } = useUserContext();
   const navigate = useNavigate();
+  console.log(user)
   function logout(){
     console.log(childFolders);
       logoutUser()
@@ -33,42 +35,69 @@ export default  function Dashboard(){
   return (
     <>
     <Navbarf/>
+    
+    <div style={{
+    display: 'flex',
+    height: '100vh',
+    margin: '0',
+    backgroundImage:'url(cloud.jpg)',
+    backgroundSize: 'cover',
+    overflow: 'hidden',
+    flexDirection: 'column',
+}}>
+  
+    <h3 id="DashboardWelcome" className='pt-4 ps-5'>Welcome {user.displayName}!</h3>
+    
     <Container fluid>
-    <FolderBreadcrumbs currentFolder={folder} />
-      <AddFileButton currentFolder={folder}/>
-      <AddFolderButton currentFolder={folder}/>
-      <div className="d-flex align-items-center">
-        </div>
-        {childFolders.length > 0 && (
-          <div className="d-flex flex-wrap">
-            {childFolders.map(childFolder => (
-              <div
-                key={childFolder.id}
-                style={{ maxWidth: "250px" }}
-                className="p-2"
-              >
-                <Folder folder={childFolder} />
+
+    <Container className='position-absolute top-50 start-50 translate-middle'>
+      <Row>
+        <Col id="AccountInfo">
+          <h4>Email: {user.email}</h4>
+          <Button onClick={logout} className="rounded-pill" id="logoutButton">Log out</Button>
+        </Col>
+        <Col id="folderBG" className='rounded shadow'>
+            <FolderBreadcrumbs currentFolder={folder} />
+          <AddFileButton currentFolder={folder}/>
+          <AddFolderButton currentFolder={folder}/>
+          <div className="d-flex align-items-center">
+            </div>
+            {childFolders.length > 0 && (
+              <div className="d-flex flex-wrap">
+                {childFolders.map(childFolder => (
+                  <div
+                    key={childFolder.id}
+                    style={{ maxWidth: "250px" }}
+                    className="p-2"
+                  >
+                    <Folder folder={childFolder} />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
-        {childFolders.length > 0 && childFiles.length > 0 && <hr />}
-        {childFiles.length > 0 && (
-          <div className="d-flex flex-wrap">
-            {childFiles.map(childFile => (
-              <div
-                key={childFile.id}
-                style={{ maxWidth: "250px" }}
-                className="p-2"
-              >
-                <File file={childFile} />
+            )}
+            {childFolders.length > 0 && childFiles.length > 0 && <hr />}
+            {childFiles.length > 0 && (
+              <div className="d-flex flex-wrap">
+                {childFiles.map(childFile => (
+                  <div
+                    key={childFile.id}
+                    style={{ maxWidth: "250px" }}
+                    className="p-2"
+                  >
+                    <File file={childFile} />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
+            )}
+        </Col>
+      </Row>
     </Container>
-      <button onClick={logout}>Log out</button>
+
+
+    
+    </Container>
+    
+    </div>
     </>
-   
   );
 };
