@@ -26,6 +26,7 @@
 
 #DashboardWelcome, #AccountInfo {
     color: antiquewhite;
+    font-family: Alata;
 }
 
 #logoutButton {
