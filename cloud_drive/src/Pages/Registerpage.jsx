@@ -74,15 +74,9 @@ export default function Registerpage() {
                       {/* Create another form control, onSubmit check for different text between Password and Confirm Password fields }
   /*
                       <Form.Label>Confirm Password</Form.Label>
-<<<<<<< HEAD
-                      <Form.Control type="password" placeholder="Confirm Password" ref={cnfPsdRef} />
-                      {/* Password confirmation END */}
-                      
-=======
                       <Form.Control type="password" placeholder="Password" />
                       {/* Password confirmation END }
 /*                      
->>>>>>> origin/main
                       <Form.Label>Name</Form.Label>
                       <Form.Control type="name" placeholder="Name" ref={nameRef} />
                       <hr class="solid" />
