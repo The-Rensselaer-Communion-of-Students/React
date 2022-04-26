@@ -10,7 +10,6 @@ import {
   import Registerpage from '../Pages/Registerpage'
   import Dashboard from '../Pages/Dashboard'
   import PasswordReset from '../Pages/Passwordreset'
-  import Editor from '../Pages/Editor'
   import Upload from '../Pages/Upload'
   import Help from '../Pages/Help'
   export default function AppRouter(props) {
@@ -23,7 +22,6 @@ import {
             <Route exact path='/register' element={<Registerpage/>} />
             <Route exact path='/dashboard' element={<Dashboard/>} />
             <Route exact path='/reset' element={<PasswordReset/>} />
-            <Route exact path='/editor' element={<Editor/>} />
             <Route exact path='/upload' element={<Upload/>} />
             <Route exact path="/folder/:folderId" element={<Dashboard/>}/>
             <Route exact path='/help' element={<Help/>} />

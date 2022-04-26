@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Navbarf from "../Components/Navbarf";
-<<<<<<< HEAD
 import { Container } from "react-bootstrap";
 import AddFolderButton from "../Components/AddFolderButton";
 import { useFolder } from "../hooks/useFolder";
@@ -21,13 +20,6 @@ export default  function Dashboard(){
   //console.log(folder);
   //console.log(childFolders);
   const { user, logoutUser } = useUserContext();
-=======
-import "./Dashboard.css"
-import { Table } from 'react-bootstrap';
-
-const Dashboard = () => {
-  const { user, logoutUser, changeProfilePic } = useUserContext();
->>>>>>> 77a643b95c3c0506c40d7601430888e3d89a43f9
   const navigate = useNavigate();
   function logout(){
     console.log(childFolders);
@@ -37,15 +29,6 @@ const Dashboard = () => {
   }
   function reset() {
     navigate("/reset")
-  }
-  function changeProfilePicture(picture) {
-    
-    changeProfilePic(picture)
-  }
-  function onSubmit(e) {
-    e.preventDefault()
-    console.log(imageURL.current.value)
-    changeProfilePicture(imageURL.current.value)
   }
   return (
     <>

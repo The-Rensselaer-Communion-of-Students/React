@@ -21,7 +21,7 @@ export default function Navbarf() {
         <Nav.Link href="/dashboard">Account</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-        <Nav.Link href="/Files">Files</Nav.Link>
+        <Nav.Link href="/dashboard">Files</Nav.Link>
         </Nav.Item>
         <Nav.Item>
         <Nav.Link href="/Upload">Upload</Nav.Link>
