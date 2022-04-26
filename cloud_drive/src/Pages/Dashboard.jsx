@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import AddFileButton from "../Components/AddFileButton";
 import File from "../Components/File";
+import FolderBreadcrumbs from '../Components/TopDash'
 export default  function Dashboard(){
   const { folderId } = useParams()
   const { state = {} } = useLocation()
@@ -29,9 +30,9 @@ export default  function Dashboard(){
     <>
     <Navbarf/>
     <Container fluid>
-      <AddFolderButton currentFolder={folder}/>
+    <FolderBreadcrumbs currentFolder={folder} />
       <AddFileButton currentFolder={folder}/>
-      {folder && <Folder folder={folder}></Folder>}
+      <AddFolderButton currentFolder={folder}/>
       <div className="d-flex align-items-center">
         </div>
         {childFolders.length > 0 && (
