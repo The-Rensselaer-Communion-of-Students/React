@@ -1,9 +1,10 @@
 import Form from 'react-bootstrap/Form'
-import { Button } from 'react-bootstrap'
+import { Button, Container, Row } from 'react-bootstrap'
 import React, { useRef } from "react";
 import { useUserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import Navbarf from '../Components/Navbarf';
+import './Passwordreset.css'
 
 
 export default function ResetPage() {
@@ -30,14 +31,25 @@ export default function ResetPage() {
     return (
         <>
             <Navbarf></Navbarf>
-            <div className='container'>
-                <section className='row'>
+            <div style={{
+    display: 'flex',
+    height: '100vh',
+    margin: '0',
+    backgroundImage:'url(cloud.jpg)',
+    backgroundSize: 'cover',
+    overflow: 'hidden',
+    flexDirection: 'column',
+}}>
+            <h3 className='pt-4 ms-5 prTitle'>Reset Password</h3>
+            <Container id="resetbg" className='position-absolute top-50 start-50 translate-middle rounded shadow'>
+                <Row>
                     <Form onSubmit={resetSubmit}>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type='email' ref={resetEMAIL} required></Form.Control>      
-                        <Button type="submit">Reset</Button>
+                        <Form.Label className='mb-3'>Email</Form.Label>
+                        <Form.Control type='email' ref={resetEMAIL} className='mb-3' required></Form.Control>      
+                        <Button type="submit" className='rounded-pill my-3' id="prReset">Reset</Button>
                     </Form>
-                </section>
+                </Row>
+            </Container>
             </div>
         </>
     )

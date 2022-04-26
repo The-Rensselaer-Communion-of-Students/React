@@ -53,8 +53,12 @@ export default  function Dashboard(){
     <Container className='position-absolute top-50 start-50 translate-middle'>
       <Row>
         <Col id="AccountInfo">
-          <h4>Email: {user.email}</h4>
-          <Button onClick={logout} className="rounded-pill" id="logoutButton">Log out</Button>
+          <h4 id='emailFormatting'>Email: {user.email}</h4>
+          <div id='ButtonFormatting' className='d-grid gap-3'>
+
+            <Button onClick={reset} className="rounded-pill" id="logoutButton">Change Password</Button>
+            <Button onClick={logout} className="rounded-pill" id="logoutButton">Log out</Button>
+          </div>
         </Col>
         <Col id="folderBG" className='rounded shadow'>
             <FolderBreadcrumbs currentFolder={folder} />
