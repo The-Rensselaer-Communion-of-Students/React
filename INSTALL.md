@@ -1,8 +1,8 @@
 # Installation Guide
 
 # Requirements
-> Terminal access
-> Node Package Manager (NPM)
+> Terminal access\n
+> Node Package Manager (npm)\n
 > Git
 
 ## Step 1
@@ -11,7 +11,7 @@ Create a directory on your local machine, name it whatever you'd like.
 
 ## Step 2
 
-** Ensure you have git installed on your machine before performing this step! **
+**Ensure you have git installed on your machine before performing this step!**
 Navigate to your new directory and run the following command in your terminal:
 
 ```
