@@ -1,9 +1,9 @@
 # Installation Guide
 
 # Requirements
-> Terminal access\n
-> Node Package Manager (npm)\n
-> Git
+- Terminal access\n
+- Node Package Manager (npm)\n
+- Git
 
 ## Step 1
 
