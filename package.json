@@ -18,7 +18,7 @@
   "homepage": "https://github.com/The-Rensselaer-Communion-of-Students/React#readme",
   "dependencies": {
     "firebase": "^9.6.10",
-    "firebase-tools": "^1.2.0",
+    "firebase-tools": "^11.24.0",
     "react-firebase-hooks": "^5.0.3",
     "react-router-dom": "^6.2.2",
     "yup-password": "^0.2.2"
